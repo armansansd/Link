@@ -13,7 +13,6 @@
     //echo crypt("admin");
     $content_path = LOCAL_PATH.'/data';
     /*open file*/
-
     if(false !== file_exists($content_path)){
         $folder = opendir($content_path);
     /*read title*/                 
@@ -23,7 +22,9 @@
         <a href="<?php echo 'article.php?title='.$title ?>"><div id="vignette_content">
         <?php 
                 $art_info = split_name($title);
-                echo "<h2 class='titre'>".$art_info[1]."</h2>";
+                $t= preg_replace('/_/',' ', $art_info[1]);
+                $t= preg_replace('/axc/','\'', $t);
+                echo "<h2 class='titre'>".$t."</h2>";
                 /*get and store the preview image*/ 
                 $pfile = opendir($content_path.'/'.$title);
                 while(false !== ($preview = readdir($pfile))){

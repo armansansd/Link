@@ -11,11 +11,11 @@
     $content_path = LOCAL_PATH.'/data'.'/'.$title;
     /*parse folder name*/
     $art_info = split_name($title);
-    //echo $date;
-
-    echo "<h3>".$art_info[1]."</h3>";
+    
+    $t= preg_replace('/_/',' ', $art_info[1]);
+    $t= preg_replace('/axc/','\'', $t);
+    echo "<h3>".$t."</h3>";
     echo "<p class='date'>".$art_info[0]."</p>";
-
     if(false !== file_exists($content_path)){
         $image_array = array();
         $image_ext = array("jpeg", "jpg", "png");
@@ -41,7 +41,7 @@
             }
         }
         foreach ($image_array as $name) {
-            echo "<img src='/rhlog/data/".$title."/".$name."'>";
+            echo "<img src='/data/".$title."/".$name."'>";
         }
         echo "<p class='text'>".$text_content."</p>";
     }

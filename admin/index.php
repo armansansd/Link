@@ -9,7 +9,7 @@
 			<div id="avatar"></div>
 		    <form action="" method="post" enctype="multipart/form-data">
 		        <label for="title">Title</label><br />
-		        <input type="text" name="title" id="tite" value="no - / ."/><br />
+		        <input type="text" name="title" id="tite" value=":-)"/><br />
 		        <input type="file" name="file[]" multiple="multiple" id="upFile" /><br />
 		        <input type="submit" value="Envoyer" />
 		    </form>
@@ -22,8 +22,9 @@
 						if( isset($_FILES['file']) && count($_FILES['file']['error']) == 1 && $_FILES['file']['error'][0] > 0 ){
 							echo 'no file';
 						}else if(isset($_FILES['file'])){
+							$a = check_str($_POST['title']);
 							/*creat folder for the article*/
-						 	$dir = LOCAL_PATH.'/data/'.date('Y | m | d').'-'.$_POST['title'];						
+						 	$dir = LOCAL_PATH.'/data/'.date('Ymd').'-'.$a;						
 						 	mkdir($dir, 0777, true);
 						 	/*upload file*/
 						 	/*var index for each file*/
@@ -68,7 +69,7 @@
 									echo "invalid extension";
 								}
 							}
-						header('Location: admin.php');
+						header('Location: index.php');
 						}
 					}else{
 						echo "please write a title";
