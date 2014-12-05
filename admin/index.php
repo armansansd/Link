@@ -35,7 +35,7 @@
 							for ($i = 0; $i < count($_FILES['file']['name']); $i++) {
 						 	/*loop to get the uploaded files*/
 							/*extension allowed*/
-							 	$imageExtension = array("jpeg", "jpg", "png");
+							 	$imageExtension = array("jpeg", "jpg", "png", "gif");
 							 	$textExtension = array("txt", "md");
 								/*get the file's extension*/
 								$ext = explode('.', basename($_FILES['file']['name'][$i]));

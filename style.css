@@ -87,7 +87,26 @@ h2.titre{
     margin: 0 0 0 0;
 }
 
-/*article*/
+/*article markdown*/
+
+p.text{
+    margin-top: 20px;
+    font-size: 1.3em;
+}
+
+#news em{
+    color:red;
+}
+#news strong{
+
+}
+#news h1, h2, h3, h4, h5, h6{
+    
+}
+#news a{
+    
+}
+/*article general*/
 #news{
     max-width:950px;
     margin: 0 auto;
@@ -95,7 +114,7 @@ h2.titre{
     right:0;
 }
 
-h3{
+p.t_a{
     margin-top:50px;
     font-size:2em;
 
@@ -105,10 +124,6 @@ p.date{
     font-style: italic;
 }
 
-p.text{
-    margin-top: 20px;
-    font-size: 1.3em;
-}
 img{
     max-width: 100%;
     margin-top: 15px;

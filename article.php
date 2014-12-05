@@ -2,6 +2,10 @@
     include_once('config.php');
     include_once(LOCAL_PATH.'/header.php');
     include_once(LOCAL_PATH.'/functions.php');
+    spl_autoload_register(function($class){
+    require preg_replace('{\\\\|_(?!.*\\\\)}', DIRECTORY_SEPARATOR, ltrim($class, '\\')).'.php';
+});
+    use \Michelf\Markdown;
 ?>
 <div id="news">
 <?php
@@ -14,7 +18,7 @@
     
     $t= preg_replace('/_/',' ', $art_info[1]);
     $t= preg_replace('/axc/','\'', $t);
-    echo "<h3>".$t."</h3>";
+    echo "<p class='t_a'>".$t."</p>";
     echo "<p class='date'>".$art_info[0]."</p>";
     if(false !== file_exists($content_path)){
         $image_array = array();
@@ -32,18 +36,18 @@
                 array_push($image_array, $files);
             }
             if(in_array($file_extension, $text_ext)){
-                //require_once('/var/www/html/rhlog/Markdown.php');
-                $text = file_get_contents($content_path.'/'.$files);
-                //$Markdown_Parser = new Markdown_Parser;
-                //$Markdown_Parser->transform($text); 
-                //unset($Markdown_Parser);
-                $text_content = str_replace("\n", "<br />", $text);                        
+                $text_md = file_get_contents($content_path.'/'.$files);
+                $text_html =  Markdown::defaultTransform($text_md);
+
+                
+                //$text_content = str_replace("\n", "<br />", $text);                        
             }
         }
         foreach ($image_array as $name) {
             echo "<img src='/data/".$title."/".$name."'>";
         }
-        echo "<p class='text'>".$text_content."</p>";
+        //echo "<p class='text'>".$text_content."</p>";
+        echo $text_html;
     }
     
 ?>
