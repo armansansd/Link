@@ -47,7 +47,7 @@
             echo "<img src='/data/".$title."/".$name."'>";
         }
         //echo "<p class='text'>".$text_content."</p>";
-        echo $text_html;
+        echo "<div class='text'>".$text_html."</div>";
     }
     
 ?>
