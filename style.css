@@ -61,6 +61,7 @@ time, mark, audio, video {
     background-color: rgb(0,0,0);
     width:300px;
     height:300px;
+    overflow: hidden;
     margin:0 20px 20px 0;
 }
 
@@ -79,15 +80,17 @@ h2.titre{
 
 #vignette{
     opacity: 1;
-    margin: 0px 0 0px 0;
+    width: 800px;
+    margin: -75px 0 0 -100px;
 }
+
 #vignette:hover {
     -webkit-transition: opacity 0.3s ease-in-out;
     -moz-transition: opacity 0.3s ease-in-out;
     transition: opacity 0.3s ease-in-out;
     opacity: 0.5;
-    margin: 0 0 0 0;
 }
+
 
 /*article markdown*/
 
@@ -128,8 +131,13 @@ p.text{
     font-size: 0.8em;
     color: rgba(0,0,0,0.7);
 }
-
+#news .text p{
+    margin-top: 0.8em;
+}
 /*article general*/
+.text{
+    margin-top: 20px;
+}
 #news{
     max-width:950px;
     margin: 0 auto;
@@ -146,8 +154,7 @@ p.date{
     font-size: 0.7em;
     font-style: italic;
 }
-
-img{
+#news img{
     max-width: 100%;
     margin-top: 15px;
 }
@@ -164,7 +171,7 @@ img{
     padding: 20px 20px 60px 20px;
     max-width:200px;
     height:auto; 
-    background-color: rgba(255,255,255,0.4);
+    background-color: black;
     margin: 0 auto;
     left:0;
     right:0;
@@ -193,17 +200,22 @@ input #upFile{
     margin-left:0 0 15px 0;
 }
 
-#admin_back{
-    position: absolute;
-    width:100%;
-    height:100%;
-    background: url(http://33.media.tumblr.com/08c38d5599b2d6cc11a400e05d631a78/tumblr_mhzl3cfvPl1qz5yzjo1_500.gif);
-    -webkit-background-size: 180% 160%;
-    -moz-background-size: 180% 160%;
-    -o-background-size: 180% 160%;
-    background-size: 180% 160%;
-}   
-
+.addt{
+    width:10px;
+    height:10px;
+    background-color:red;
+}
+.drop{
+    width:50px;
+    height:50px;
+    background-color:red;
+}
+.click{
+    width:50px;
+    height:50px;
+    background-color:blue;
+    float:right;
+}
 /*credits*/
 #credits{
     height: 150px;

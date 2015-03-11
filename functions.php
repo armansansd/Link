@@ -51,7 +51,7 @@
     $replacements[3] = "c";
     $replacements[4] = "o";
     $replacements[5] = "_";
-    $replacements[6] = "axc";
+    $replacements[6] = "";
     $str = strtolower($str);
     $str = preg_replace($patterns,$replacements,$str);
     $str = preg_replace('/_\_+/','_',$str);

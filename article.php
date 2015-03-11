@@ -16,12 +16,20 @@
     /*parse folder name*/
     $art_info = split_name($title);
     
-    $t= preg_replace('/_/',' ', $art_info[1]);
-    $t= preg_replace('/axc/','\'', $t);
+    /* get the title of the image (split date-title)*/
+    $art_info = split_name($title);
+    $n = $art_info[1];
+    /*retrieve real name*/
+    $t = file_get_contents(LOCAL_PATH.'/data/'.$title.'/'.$n.'_info.json');
+    $t = json_decode($t, true);
+    $t = $t['titre'];
+    /*display title and date*/ 
     echo "<p class='t_a'>".$t."</p>";
     echo "<p class='date'>".$art_info[0]."</p>";
+    /*image and text*/
     if(false !== file_exists($content_path)){
         $image_array = array();
+        /*allowed extension*/
         $image_ext = array("jpeg", "jpg", "png");
         $text_ext = array("txt", "md");
         $preview = "p";
@@ -44,7 +52,7 @@
             }
         }
         foreach ($image_array as $name) {
-            echo "<img src='/data/".$title."/".$name."'>";
+            echo "<img src='http://localhost:8888/rhlog/data/".$title."/".$name."'>";
         }
         //echo "<p class='text'>".$text_content."</p>";
         echo "<div class='text'>".$text_html."</div>";
