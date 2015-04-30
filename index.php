@@ -5,8 +5,7 @@
 ?>
 <div id="info">
 <?php
-    echo "<p class='title'>rhétorique logiciel</p>";
-    echo "<p class='sbtitle'>titre provisoire</p>"; 
+    echo "<p class='title'>Visualising Interface</p>"; 
 ?>
 </div> 
 <?php

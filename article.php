@@ -9,7 +9,7 @@
 ?>
 <div id="news">
 <?php
-    echo "<a class='title' href='".URL."'><div>rhétorique logiciel</div></a>";
+    echo "<a class='title' href='".URL."'><div>Visualising Interface</div></a>";
     //$title = array();
     $title = $_GET['title'];
     $content_path = LOCAL_PATH.'/data'.'/'.$title;
@@ -30,29 +30,24 @@
     if(false !== file_exists($content_path)){
         $image_array = array();
         /*allowed extension*/
-        $image_ext = array("jpeg", "jpg", "png");
+        $image_ext = array("jpeg", "jpg", "png","gif");
         $text_ext = array("txt", "md");
-        $preview = "p";
         $text_content = "";
         $folder = opendir($content_path);
         while(false !== ($files = readdir($folder))){
             /*remove preview image*/
             $ext = explode('.', basename($files));
-            $p = explode('_',$ext[0]);
             $file_extension = end($ext);
-            if(in_array($file_extension, $image_ext) && false == ($p[0] == $preview)){
+            if(in_array($file_extension, $image_ext)){
                 array_push($image_array, $files);
             }
             if(in_array($file_extension, $text_ext)){
                 $text_md = file_get_contents($content_path.'/'.$files);
-                $text_html =  Markdown::defaultTransform($text_md);
-
-                
-                //$text_content = str_replace("\n", "<br />", $text);                        
+                $text_html =  Markdown::defaultTransform($text_md);                       
             }
         }
         foreach ($image_array as $name) {
-            echo "<img src='http://localhost:8888/rhlog/data/".$title."/".$name."'>";
+            echo "<img src='data/".$title."/".$name."'>";
         }
         //echo "<p class='text'>".$text_content."</p>";
         echo "<div class='text'>".$text_html."</div>";

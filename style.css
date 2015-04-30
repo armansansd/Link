@@ -18,6 +18,8 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
+/*font*/
+/*****/
 
 @font-face {
         font-family: 'terminal_open';
@@ -34,7 +36,10 @@ time, mark, audio, video {
 }
 
 /*menu tag*/
-/*info*/
+/*********/
+
+/*titre*/
+/******/
 #info{
     width:350px;
     z-index:20;
@@ -55,6 +60,8 @@ time, mark, audio, video {
 }
 
 /*front page*/
+/***********/
+
 #vignette_content{
     position:relative;
     float:left;
@@ -93,6 +100,7 @@ h2.titre{
 
 
 /*article markdown*/
+/*****************/
 
 p.text{
     margin-top: 20px;
@@ -134,7 +142,10 @@ p.text{
 #news .text p{
     margin-top: 0.8em;
 }
+
+
 /*article general*/
+/****************/
 .text{
     margin-top: 20px;
 }
@@ -159,65 +170,133 @@ p.date{
     margin-top: 15px;
 }
 
+
+
+
+
+/*******/
 /*admin*/
-#avatar{
-    height:200px; 
-    width: 200px;
-    background-color: rgba(0,0,0,0.3);
-}
+/******/
+
+
+
+
 
 #formulaire{
     position: absolute;
-    padding: 20px 20px 60px 20px;
-    max-width:200px;
-    height:auto; 
-    background-color: black;
+    background-color: rgba(27,40,153,0.8);
     margin: 0 auto;
     left:0;
     right:0;
-    top:50%;
-    margin-top: -220px;
-    color: white;
+    padding-top: 70px;
 }
 
-form{
-    margin: 20px 0 0 0;
+.addt::before {
+    position: absolute;
+    -webkit-transform:rotate(90deg);
+    content: '';
+    width:50px;
+    height:10px;
+    background-color:white;
+}
+.addt{
+    position: relative;
+    margin: 0px auto 80px auto;
+    width:50px;
+    height:10px;
+    background-color:white;
+}
+
+#rotate{
+    -webkit-transition: -webkit-transform 0.2s ease-out;
+
+}
+.rotate{
+    -webkit-transform:rotate(45deg);
+}
+
+form{  
+    padding: 30px 0 30px 60px;
+    background-color: rgba(255,229,128,1);
     font-family: 'Andale Mono', monospace;
 }
 label{
     font-size: 18px;
 }
-#tite{
+
+.r_titre{
+    margin:0 0 0 200px;
+    font-size:70px;
+    line-height: 1.8em;
+    font-weight: bold;
+    }
+
+.help{
+    margin:0 0 0 200px;
+    font-style: 15px;
+    margin-top: 15px;
+    color:white;
+}
+
+.info{
     height:20px;
     border-style: none;
     padding:0 0 0 10px;
     margin: 0 0 15px 0;
 }
 
-input #upFile{
-    border-style: none;
-    font-family: 'Andale Mono', monospace;
-    margin-left:0 0 15px 0;
+.drop{
+    max-width:680px;
+    min-height:400px;
+    margin:70px auto 0 auto;
+    border:5px;
+    border-style: solid;
+    padding:0 0 15px 15px;
+}
+.drop:hover{
+    background-color:rgba(250,144,27,1);
+    box-shadow: 14px 14px 0px rgb(8,26,60); 
 }
 
-.addt{
-    width:10px;
-    height:10px;
-    background-color:red;
+/*dropzone.js workaround*/
+/***********************/
+
+.dz-drag-hover{
+    background-color:rgba(250,144,27,1);
+   box-shadow: 14px 14px 0px rgb(8,26,60);  
 }
-.drop{
-    width:50px;
-    height:50px;
-    background-color:red;
+.dz-image{
+    opacity: 0.6;
 }
+.dz-details{
+    font-size:18px;
+    width:120px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.dz-success-mark{
+    display:none;
+}
+.dz-error-mark{
+    display:none;
+}
+.dz-preview{
+    display:inline-block;
+    margin:15px 15px 0 0;
+
+}
+
+/***************/
+
+
 .click{
     width:50px;
     height:50px;
-    background-color:blue;
-    float:right;
+    margin:0px auto;
+    font-size: 80px;
+    margin-bottom: 100px;
 }
-/*credits*/
-#credits{
-    height: 150px;
-
+.click:hover{
+     color:rgba(250,144,27,1);;
 }
