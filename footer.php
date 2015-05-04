@@ -7,7 +7,6 @@
 	    $('.addt').click(function(){
 	    	$('#rotate').toggleClass('rotate');
 	    	$('.t_form').slideToggle('fast');
-
 	    })
 			var dropzone = new Dropzone(".drop", { 
 				url: "#",
@@ -17,7 +16,7 @@
 			});
 			$('.click').click(function(){
 				dropzone.processQueue();
-				window.location.assign("http://localhost:8890/rhlog/admin");
+				window.location.assign(document.location.origin + document.location.pathname);
 			});
 			
 		</script>

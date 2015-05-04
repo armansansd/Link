@@ -43,14 +43,16 @@
             }
             if(in_array($file_extension, $text_ext)){
                 $text_md = file_get_contents($content_path.'/'.$files);
-                $text_html =  Markdown::defaultTransform($text_md);                       
+                $text_content =  Markdown::defaultTransform($text_md);                       
             }
         }
         foreach ($image_array as $name) {
             echo "<img src='data/".$title."/".$name."'>";
         }
+        if( $text_content != false){
         //echo "<p class='text'>".$text_content."</p>";
-        echo "<div class='text'>".$text_html."</div>";
+        echo "<div class='text'>".$text_content."</div>";
+        }
     }
     
 ?>
