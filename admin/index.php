@@ -23,7 +23,7 @@ if (!empty($_GET['title'])){
 		//nettoyer le titre
 		$t = check_str($_GET['title']);
 		//traitement des tags
-		$spl_tag = split(',',$_GET['tag']);
+		$spl_tag = explode(',',$_GET['tag']);
 		//>>> elever les doublons <<<<//
 
 
@@ -49,7 +49,7 @@ if (!empty($_GET['title'])){
 
 		";
 }
-if (isset($_FILES)) {
+if (!empty($_FILES)) {
      /*chargement des fichiers*/
 	$imageExtension = array("jpeg", "jpg", "png", "gif"); //extensions autorisées
 	$textExtension = array("txt", "md"); //
