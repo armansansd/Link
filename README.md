@@ -1,9 +1,5 @@
-rhlog
-=====
+###Link
 
-site de recherches pour le projet de mémoire
+ligh and easy to use cms
 
-to do :   
-* markdown 
-* sauver txt dans BDD  
-* image gallery  
+
