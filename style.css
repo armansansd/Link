@@ -194,6 +194,7 @@ p.date{
 .addt::before {
     position: absolute;
     -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
     content: '';
     width:50px;
     height:10px;
@@ -209,10 +210,12 @@ p.date{
 
 #rotate{
     -webkit-transition: -webkit-transform 0.2s ease-out;
+    -moz-transition: -moz-transform 0.2s ease-out;
 
 }
 .rotate{
     -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
 }
 
 form{  
